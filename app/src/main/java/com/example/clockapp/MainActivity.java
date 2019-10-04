@@ -264,12 +264,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void hr12clicked() {
         if (!hr12Selected) {
+            // if their settings are 12 hr
             sydClock.setFormat12Hour("h:mm a");
             laClock.setFormat12Hour("h:mm a");
             madridClock.setFormat12Hour("h:mm a");
             tokyoClock.setFormat12Hour("h:mm a");
             londonClock.setFormat12Hour("h:mm a");
             nyClock.setFormat12Hour("h:mm a");
+
+            // if their settings are 24 hr
+            sydClock.setFormat24Hour("h:mm a");
+            laClock.setFormat24Hour("h:mm a");
+            madridClock.setFormat24Hour("h:mm a");
+            tokyoClock.setFormat24Hour("h:mm a");
+            londonClock.setFormat24Hour("h:mm a");
+            nyClock.setFormat24Hour("h:mm a");
 
             hr12Selected = true;
             hr24.setBackgroundColor(Color.parseColor("#db7d00"));
@@ -279,13 +288,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void hr24clicked() {
         if (hr12Selected) {
+            // if their settings are 12 hr
+            sydClock.setFormat12Hour("H:mm");
+            laClock.setFormat12Hour("H:mm");
+            madridClock.setFormat12Hour("H:mm");
+            tokyoClock.setFormat12Hour("H:mm");
+            londonClock.setFormat12Hour("H:mm");
+            nyClock.setFormat12Hour("H:mm");
 
-            sydClock.setFormat12Hour("HH:mm");
-            laClock.setFormat12Hour("HH:mm");
-            madridClock.setFormat12Hour("HH:mm");
-            tokyoClock.setFormat12Hour("HH:mm");
-            londonClock.setFormat12Hour("HH:mm");
-            nyClock.setFormat12Hour("HH:mm");
+            // if their settings are 24 hr
+            sydClock.setFormat24Hour("H:mm");
+            laClock.setFormat24Hour("H:mm");
+            madridClock.setFormat24Hour("H:mm");
+            tokyoClock.setFormat24Hour("H:mm");
+            londonClock.setFormat24Hour("H:mm");
+            nyClock.setFormat24Hour("H:mm");
 
             hr12Selected = false;
             hr12.setBackgroundColor(Color.parseColor("#db7d00"));
