@@ -2,6 +2,8 @@ package com.example.clockapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextClock;
@@ -12,10 +14,16 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    boolean hr12Selected = true;
+    Button hr12, hr24;
+    TextClock sydClock, nyClock, tokyoClock, londonClock, laClock, madridClock;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        hr12Selected = true;
 
         //SYDNEY
         LinearLayout sydneyChunk = findViewById(R.id.sydney_clock);
@@ -23,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         TextView sydneyName = sydneyChunk.findViewById(R.id.city_name);
         sydneyName.setText("Sydney");
 
-        TextClock sydClock = sydneyChunk.findViewById(R.id.clock);
+        sydClock = sydneyChunk.findViewById(R.id.clock);
         sydClock.setTimeZone("Australia/Sydney");
 
         ImageView sydImg = sydneyChunk.findViewById(R.id.city_image);
@@ -35,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         TextView nyName = nyChunk.findViewById(R.id.city_name);
         nyName.setText("New York");
 
-        TextClock nyClock = nyChunk.findViewById(R.id.clock);
+        nyClock = nyChunk.findViewById(R.id.clock);
         nyClock.setTimeZone("America/New_York");
 
         ImageView nyImg = nyChunk.findViewById(R.id.city_image);
@@ -47,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tokyoName = tokyoChunk.findViewById(R.id.city_name);
         tokyoName.setText("Tokyo");
 
-        TextClock tokyoClock = tokyoChunk.findViewById(R.id.clock);
+        tokyoClock = tokyoChunk.findViewById(R.id.clock);
         tokyoClock.setTimeZone("Asia/Tokyo");
 
         ImageView tokyoImg = tokyoChunk.findViewById(R.id.city_image);
@@ -59,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         TextView londonName = londonChunk.findViewById(R.id.city_name);
         londonName.setText("London");
 
-        TextClock londonClock = londonChunk.findViewById(R.id.clock);
+        londonClock = londonChunk.findViewById(R.id.clock);
         londonClock.setTimeZone("Europe/London");
 
         ImageView londonImg = londonChunk.findViewById(R.id.city_image);
@@ -71,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         TextView laName = laChunk.findViewById(R.id.city_name);
         laName.setText("Los Angeles");
 
-        TextClock laClock = laChunk.findViewById(R.id.clock);
+        laClock = laChunk.findViewById(R.id.clock);
         laClock.setTimeZone("America/Los_Angeles");
 
         ImageView laImg = laChunk.findViewById(R.id.city_image);
@@ -83,10 +91,54 @@ public class MainActivity extends AppCompatActivity {
         TextView madridName = madridChunk.findViewById(R.id.city_name);
         madridName.setText("Madrid");
 
-        TextClock madridClock = madridChunk.findViewById(R.id.clock);
+        madridClock = madridChunk.findViewById(R.id.clock);
         madridClock.setTimeZone("Europe/Madrid");
 
         ImageView madridImg = madridChunk.findViewById(R.id.city_image);
         madridImg.setImageResource(R.drawable.madrid);
+
+        //BUTTONS
+
+        hr12 = findViewById(R.id.hr12);
+        hr12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hr12clicked();
+            }
+        });
+
+        hr24 = findViewById(R.id.hr24);
+        hr24.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hr24clicked();
+            }
+        });
+    }
+
+    private void hr12clicked() {
+        if (!hr12Selected) {
+            sydClock.setFormat12Hour("h:mm a");
+            laClock.setFormat12Hour("h:mm a");
+            madridClock.setFormat12Hour("h:mm a");
+            tokyoClock.setFormat12Hour("h:mm a");
+            londonClock.setFormat12Hour("h:mm a");
+            nyClock.setFormat12Hour("h:mm a");
+
+            hr12Selected = true;
+        }
+    }
+
+    private void hr24clicked() {
+        if (hr12Selected) {
+            sydClock.setFormat24Hour("hh:mm");
+            laClock.setFormat24Hour("hh:mm");
+            madridClock.setFormat24Hour("hh:mm");
+            tokyoClock.setFormat24Hour("hh:mm");
+            londonClock.setFormat24Hour("hh:mm");
+            nyClock.setFormat24Hour("hh:mm");
+
+            hr12Selected = false;
+        }
     }
 }

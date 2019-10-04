@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
-            android:format12Hour="hh:mm a"
+            android:format12Hour="h:mm a"
             android:textColor="#000000"
             android:textSize="35dp"
             app:layout_constraintLeft_toLeftOf="parent"
