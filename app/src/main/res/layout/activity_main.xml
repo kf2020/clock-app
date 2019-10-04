@@ -4,15 +4,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#ebb267">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <ScrollView
+        android:id="@+id/scrollClocks"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <include
+                android:id="@+id/sydney_clock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/clock"
+                />
+
+            <include
+                android:id="@+id/ny_clock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/clock"
+                />
+
+            <include
+                android:id="@+id/tokyo_clock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/clock"
+                />
+
+            <include
+                android:id="@+id/london_clock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/clock"
+                />
+
+            <include
+                android:id="@+id/la_clock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/clock"
+                />
+
+            <include
+                android:id="@+id/madrid_clock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/clock"
+                android:layout_marginBottom="60dp"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/hrSelect"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="#a3a3a3"
+        >
+
+        <Button
+            android:id="@+id/hr12"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="12 hour" >
+        </Button>
+
+        <Button
+            android:id="@+id/hr24"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="24 hour" >
+
+        </Button>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
