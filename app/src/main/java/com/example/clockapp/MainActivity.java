@@ -17,7 +17,10 @@ public class MainActivity extends AppCompatActivity {
 
     boolean hr12Selected = true;
     Button hr12, hr24;
+    LinearLayout sydneyChunk, nyChunk, tokyoChunk, londonChunk, laChunk, madridChunk;
+    LinearLayout sydneyClosed, nyClosed, tokyoClosed, londonClosed, laClosed, madridClosed;
     TextClock sydClock, nyClock, tokyoClock, londonClock, laClock, madridClock;
+    boolean sydShow, nyShow, tokyoShow, londonShow, laShow, madridShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         hr12Selected = true;
 
         //SYDNEY
-        LinearLayout sydneyChunk = findViewById(R.id.sydney_clock);
+        sydShow = true;
+        sydneyChunk = findViewById(R.id.sydney_clock);
 
         TextView sydneyName = sydneyChunk.findViewById(R.id.city_name);
         sydneyName.setText("Sydney");
@@ -38,8 +42,29 @@ public class MainActivity extends AppCompatActivity {
         ImageView sydImg = sydneyChunk.findViewById(R.id.city_image);
         sydImg.setImageResource(R.drawable.operahouse2);
 
+        ImageView sydChevron = sydneyChunk.findViewById(R.id.city_chevron);
+        sydChevron.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sydChevronClicked();
+            }
+        });
+
+        sydneyClosed = findViewById(R.id.sydney_clock_closed);
+        TextView sydneyNameClosed = sydneyClosed.findViewById(R.id.city_name);
+        sydneyNameClosed.setText("Sydney");
+
+        ImageView sydChevronClosed = sydneyClosed.findViewById(R.id.city_chevron);
+        sydChevronClosed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sydChevronClicked();
+            }
+        });
+
         //NEW YORK
-        LinearLayout nyChunk = findViewById(R.id.ny_clock);
+        nyShow = true;
+        nyChunk = findViewById(R.id.ny_clock);
 
         TextView nyName = nyChunk.findViewById(R.id.city_name);
         nyName.setText("New York");
@@ -50,8 +75,32 @@ public class MainActivity extends AppCompatActivity {
         ImageView nyImg = nyChunk.findViewById(R.id.city_image);
         nyImg.setImageResource(R.drawable.statueofliberty);
 
+        ImageView nyChevron = nyChunk.findViewById(R.id.city_chevron);
+        nyChevron.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nyChevronClicked();
+            }
+        });
+
+        nyClosed = findViewById(R.id.ny_clock_closed);
+        TextView nyNameClosed = nyClosed.findViewById(R.id.city_name);
+        nyNameClosed.setText("New York");
+
+        ImageView nyImgClosed = nyClosed.findViewById(R.id.city_image);
+        nyImgClosed.setImageResource(R.drawable.statueofliberty);
+
+        ImageView nyChevronClosed = nyClosed.findViewById(R.id.city_chevron);
+        nyChevronClosed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nyChevronClicked();
+            }
+        });
+
         //TOKYO
-        LinearLayout tokyoChunk = findViewById(R.id.tokyo_clock);
+        tokyoShow = true;
+        tokyoChunk = findViewById(R.id.tokyo_clock);
 
         TextView tokyoName = tokyoChunk.findViewById(R.id.city_name);
         tokyoName.setText("Tokyo");
@@ -62,8 +111,32 @@ public class MainActivity extends AppCompatActivity {
         ImageView tokyoImg = tokyoChunk.findViewById(R.id.city_image);
         tokyoImg.setImageResource(R.drawable.tokyo);
 
+        ImageView tokyoChevron = tokyoChunk.findViewById(R.id.city_chevron);
+        tokyoChevron.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tokyoChevronClicked();
+            }
+        });
+
+        tokyoClosed = findViewById(R.id.tokyo_clock_closed);
+        TextView tokyoNameClosed = tokyoClosed.findViewById(R.id.city_name);
+        tokyoNameClosed.setText("Tokyo");
+
+        ImageView tokyoImgClosed = tokyoClosed.findViewById(R.id.city_image);
+        tokyoImgClosed.setImageResource(R.drawable.tokyo);
+
+        ImageView tokyoChevronClosed = tokyoClosed.findViewById(R.id.city_chevron);
+        tokyoChevronClosed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tokyoChevronClicked();
+            }
+        });
+
         //LA
-        LinearLayout laChunk = findViewById(R.id.la_clock);
+        laShow = true;
+        laChunk = findViewById(R.id.la_clock);
 
         TextView laName = laChunk.findViewById(R.id.city_name);
         laName.setText("Los Angeles");
@@ -74,8 +147,32 @@ public class MainActivity extends AppCompatActivity {
         ImageView laImg = laChunk.findViewById(R.id.city_image);
         laImg.setImageResource(R.drawable.hollywood);
 
+        ImageView laChevron = laChunk.findViewById(R.id.city_chevron);
+        laChevron.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                laChevronClicked();
+            }
+        });
+
+        laClosed = findViewById(R.id.la_clock_closed);
+        TextView laNameClosed = laClosed.findViewById(R.id.city_name);
+        laNameClosed.setText("Los Angeles");
+
+        ImageView laImgClosed = laClosed.findViewById(R.id.city_image);
+        laImgClosed.setImageResource(R.drawable.hollywood);
+
+        ImageView laChevronClosed = laClosed.findViewById(R.id.city_chevron);
+        laChevronClosed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                laChevronClicked();
+            }
+        });
+
         //LONDON
-        LinearLayout londonChunk = findViewById(R.id.london_clock);
+        londonShow = true;
+        londonChunk = findViewById(R.id.london_clock);
 
         TextView londonName = londonChunk.findViewById(R.id.city_name);
         londonName.setText("London");
@@ -86,8 +183,32 @@ public class MainActivity extends AppCompatActivity {
         ImageView londonImg = londonChunk.findViewById(R.id.city_image);
         londonImg.setImageResource(R.drawable.bigben3);
 
+        ImageView londonChevron = londonChunk.findViewById(R.id.city_chevron);
+        londonChevron.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                londonChevronClicked();
+            }
+        });
+
+        londonClosed = findViewById(R.id.london_clock_closed);
+        TextView londonNameClosed = londonClosed.findViewById(R.id.city_name);
+        londonNameClosed.setText("London");
+
+        ImageView londonImgClosed = londonClosed.findViewById(R.id.city_image);
+        londonImgClosed.setImageResource(R.drawable.bigben3);
+
+        ImageView londonChevronClosed = londonClosed.findViewById(R.id.city_chevron);
+        londonChevronClosed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                londonChevronClicked();
+            }
+        });
+
         //MADRID
-        LinearLayout madridChunk = findViewById(R.id.madrid_clock);
+        madridShow = true;
+        madridChunk = findViewById(R.id.madrid_clock);
 
         TextView madridName = madridChunk.findViewById(R.id.city_name);
         madridName.setText("Madrid");
@@ -97,6 +218,30 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView madridImg = madridChunk.findViewById(R.id.city_image);
         madridImg.setImageResource(R.drawable.madrid);
+
+        ImageView madridChevron = madridChunk.findViewById(R.id.city_chevron);
+        madridChevron.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                madridChevronClicked();
+            }
+        });
+
+        madridClosed = findViewById(R.id.madrid_clock_closed);
+        TextView madridNameClosed = madridClosed.findViewById(R.id.city_name);
+        madridNameClosed.setText("Madrid");
+
+        ImageView madridImgClosed = madridClosed.findViewById(R.id.city_image);
+        madridImgClosed.setImageResource(R.drawable.madrid);
+
+        ImageView madridChevronClosed = madridClosed.findViewById(R.id.city_chevron);
+        madridChevronClosed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                madridChevronClicked();
+            }
+        });
+
 
         //BUTTONS
 
@@ -146,5 +291,71 @@ public class MainActivity extends AppCompatActivity {
             hr12.setBackgroundColor(Color.parseColor("#db7d00"));
             hr24.setBackgroundColor(Color.parseColor("#a3a3a3"));
         }
+    }
+
+    private void sydChevronClicked() {
+        if (sydShow) {
+            sydneyChunk.setVisibility(View.GONE);
+            sydneyClosed.setVisibility(View.VISIBLE);
+        } else {
+            sydneyClosed.setVisibility(View.GONE);
+            sydneyChunk.setVisibility(View.VISIBLE);
+        }
+        sydShow = !sydShow;
+    }
+
+    private void nyChevronClicked() {
+        if (nyShow) {
+            nyChunk.setVisibility(View.GONE);
+            nyClosed.setVisibility(View.VISIBLE);
+        } else {
+            nyClosed.setVisibility(View.GONE);
+            nyChunk.setVisibility(View.VISIBLE);
+        }
+        nyShow = !nyShow;
+    }
+
+    private void laChevronClicked() {
+        if (laShow) {
+            laChunk.setVisibility(View.GONE);
+            laClosed.setVisibility(View.VISIBLE);
+        } else {
+            laClosed.setVisibility(View.GONE);
+            laChunk.setVisibility(View.VISIBLE);
+        }
+        laShow = !laShow;
+    }
+
+    private void londonChevronClicked() {
+        if (londonShow) {
+            londonChunk.setVisibility(View.GONE);
+            londonClosed.setVisibility(View.VISIBLE);
+        } else {
+            londonClosed.setVisibility(View.GONE);
+            londonChunk.setVisibility(View.VISIBLE);
+        }
+        londonShow = !londonShow;
+    }
+
+    private void madridChevronClicked() {
+        if (madridShow) {
+            madridChunk.setVisibility(View.GONE);
+            madridClosed.setVisibility(View.VISIBLE);
+        } else {
+            madridClosed.setVisibility(View.GONE);
+            madridChunk.setVisibility(View.VISIBLE);
+        }
+        madridShow = !madridShow;
+    }
+
+    private void tokyoChevronClicked() {
+        if (tokyoShow) {
+            tokyoChunk.setVisibility(View.GONE);
+            tokyoClosed.setVisibility(View.VISIBLE);
+        } else {
+            tokyoClosed.setVisibility(View.GONE);
+            tokyoChunk.setVisibility(View.VISIBLE);
+        }
+        tokyoShow = !tokyoShow;
     }
 }

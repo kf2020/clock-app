@@ -26,12 +26,26 @@
                 android:layout_height="wrap_content"
                 layout="@layout/clock"
                 />
+            <include
+                android:id="@+id/sydney_clock_closed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                layout="@layout/closed_clock"
+                />
 
             <include
                 android:id="@+id/ny_clock"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 layout="@layout/clock"
+                />
+            <include
+                android:id="@+id/ny_clock_closed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                layout="@layout/closed_clock"
                 />
 
             <include
@@ -40,12 +54,26 @@
                 android:layout_height="wrap_content"
                 layout="@layout/clock"
                 />
+            <include
+                android:id="@+id/tokyo_clock_closed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                layout="@layout/closed_clock"
+                />
 
             <include
                 android:id="@+id/la_clock"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 layout="@layout/clock"
+                />
+            <include
+                android:id="@+id/la_clock_closed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                layout="@layout/closed_clock"
                 />
 
             <include
@@ -54,6 +82,13 @@
                 android:layout_height="wrap_content"
                 layout="@layout/clock"
                 />
+            <include
+                android:id="@+id/london_clock_closed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                layout="@layout/closed_clock"
+                />
 
             <include
                 android:id="@+id/madrid_clock"
@@ -61,6 +96,14 @@
                 android:layout_height="wrap_content"
                 layout="@layout/clock"
                 android:layout_marginBottom="60dp"
+                />
+            <include
+                android:id="@+id/madrid_clock_closed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="60dp"
+                layout="@layout/closed_clock"
                 />
 
         </LinearLayout>
