@@ -42,14 +42,14 @@
                 />
 
             <include
-                android:id="@+id/london_clock"
+                android:id="@+id/la_clock"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 layout="@layout/clock"
                 />
 
             <include
-                android:id="@+id/la_clock"
+                android:id="@+id/london_clock"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 layout="@layout/clock"
@@ -83,8 +83,9 @@
             android:layout_height="match_parent"
             android:text="12 hour"
             android:background="#a3a3a3"
-
+            android:textSize="25dp"
             >
+
         </Button>
 
         <Button
@@ -93,7 +94,9 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:text="24 hour"
-            android:background="#ffbc12">
+            android:background="#db7d00"
+            android:textSize="25dp"
+            >
 
         </Button>
 

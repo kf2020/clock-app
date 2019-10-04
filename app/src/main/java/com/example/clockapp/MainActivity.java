@@ -3,7 +3,6 @@ package com.example.clockapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         sydClock.setTimeZone("Australia/Sydney");
 
         ImageView sydImg = sydneyChunk.findViewById(R.id.city_image);
-        sydImg.setImageResource(R.drawable.operahouse);
+        sydImg.setImageResource(R.drawable.operahouse2);
 
         //NEW YORK
         LinearLayout nyChunk = findViewById(R.id.ny_clock);
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         nyClock.setTimeZone("America/New_York");
 
         ImageView nyImg = nyChunk.findViewById(R.id.city_image);
-        nyImg.setImageResource(R.drawable.ny_pic);
+        nyImg.setImageResource(R.drawable.statueofliberty);
 
         //TOKYO
         LinearLayout tokyoChunk = findViewById(R.id.tokyo_clock);
@@ -63,18 +62,6 @@ public class MainActivity extends AppCompatActivity {
         ImageView tokyoImg = tokyoChunk.findViewById(R.id.city_image);
         tokyoImg.setImageResource(R.drawable.tokyo);
 
-        //LONDON
-        LinearLayout londonChunk = findViewById(R.id.london_clock);
-
-        TextView londonName = londonChunk.findViewById(R.id.city_name);
-        londonName.setText("London");
-
-        londonClock = londonChunk.findViewById(R.id.clock);
-        londonClock.setTimeZone("Europe/London");
-
-        ImageView londonImg = londonChunk.findViewById(R.id.city_image);
-        londonImg.setImageResource(R.drawable.bigben2);
-
         //LA
         LinearLayout laChunk = findViewById(R.id.la_clock);
 
@@ -85,7 +72,19 @@ public class MainActivity extends AppCompatActivity {
         laClock.setTimeZone("America/Los_Angeles");
 
         ImageView laImg = laChunk.findViewById(R.id.city_image);
-        laImg.setImageResource(R.drawable.losangeles);
+        laImg.setImageResource(R.drawable.hollywood);
+
+        //LONDON
+        LinearLayout londonChunk = findViewById(R.id.london_clock);
+
+        TextView londonName = londonChunk.findViewById(R.id.city_name);
+        londonName.setText("London");
+
+        londonClock = londonChunk.findViewById(R.id.clock);
+        londonClock.setTimeZone("Europe/London");
+
+        ImageView londonImg = londonChunk.findViewById(R.id.city_image);
+        londonImg.setImageResource(R.drawable.bigben3);
 
         //MADRID
         LinearLayout madridChunk = findViewById(R.id.madrid_clock);
@@ -128,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
             nyClock.setFormat12Hour("h:mm a");
 
             hr12Selected = true;
-            hr24.setBackgroundColor(Color.parseColor("#ffbc12"));
+            hr24.setBackgroundColor(Color.parseColor("#db7d00"));
             hr12.setBackgroundColor(Color.parseColor("#a3a3a3"));
         }
     }
@@ -144,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
             nyClock.setFormat12Hour("HH:mm");
 
             hr12Selected = false;
-            hr12.setBackgroundColor(Color.parseColor("#ffbc12"));
+            hr12.setBackgroundColor(Color.parseColor("#db7d00"));
             hr24.setBackgroundColor(Color.parseColor("#a3a3a3"));
         }
     }
