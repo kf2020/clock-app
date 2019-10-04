@@ -81,7 +81,10 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:text="12 hour" >
+            android:text="12 hour"
+            android:background="#a3a3a3"
+
+            >
         </Button>
 
         <Button
@@ -89,7 +92,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:text="24 hour" >
+            android:text="24 hour"
+            android:background="#ffbc12">
 
         </Button>
 

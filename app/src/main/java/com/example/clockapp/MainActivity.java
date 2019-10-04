@@ -2,6 +2,8 @@ package com.example.clockapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         londonClock.setTimeZone("Europe/London");
 
         ImageView londonImg = londonChunk.findViewById(R.id.city_image);
-        londonImg.setImageResource(R.drawable.bigben);
+        londonImg.setImageResource(R.drawable.bigben2);
 
         //LA
         LinearLayout laChunk = findViewById(R.id.la_clock);
@@ -126,19 +128,24 @@ public class MainActivity extends AppCompatActivity {
             nyClock.setFormat12Hour("h:mm a");
 
             hr12Selected = true;
+            hr24.setBackgroundColor(Color.parseColor("#ffbc12"));
+            hr12.setBackgroundColor(Color.parseColor("#a3a3a3"));
         }
     }
 
     private void hr24clicked() {
         if (hr12Selected) {
-            sydClock.setFormat24Hour("hh:mm");
-            laClock.setFormat24Hour("hh:mm");
-            madridClock.setFormat24Hour("hh:mm");
-            tokyoClock.setFormat24Hour("hh:mm");
-            londonClock.setFormat24Hour("hh:mm");
-            nyClock.setFormat24Hour("hh:mm");
+
+            sydClock.setFormat12Hour("HH:mm");
+            laClock.setFormat12Hour("HH:mm");
+            madridClock.setFormat12Hour("HH:mm");
+            tokyoClock.setFormat12Hour("HH:mm");
+            londonClock.setFormat12Hour("HH:mm");
+            nyClock.setFormat12Hour("HH:mm");
 
             hr12Selected = false;
+            hr12.setBackgroundColor(Color.parseColor("#ffbc12"));
+            hr24.setBackgroundColor(Color.parseColor("#a3a3a3"));
         }
     }
 }
